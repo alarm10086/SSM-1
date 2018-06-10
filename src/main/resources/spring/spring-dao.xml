@@ -10,11 +10,6 @@
     <!--引入jdbc配置-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
-    <!--扫描文件-->
-    <context:component-scan base-package="com.endorphin.service">
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-    </context:component-scan>
-
     <!--数据库连接池-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc_driver}"/>
@@ -34,18 +29,13 @@
         <property name="dataSource" ref="dataSource"/>
         <!--载入mybatis配置文件-->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
-        <!--载入配置mapper映射的xml-->
-        <property name="mapperLocations" value="classpath*:com/endorphin/mapper/*.xml"/>
+        <!-- 扫描sql配置文件:mapper需要的xml文件 -->
+        <property name="mapperLocations" value="classpath:mapper/*"/>
     </bean>
 
-    <!--创建数据映射器-->
+    <!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.endorphin.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-    </bean>
-
-    <!--事务管理-->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="basePackage" value="com.endorphin.dao"/>
     </bean>
 </beans>

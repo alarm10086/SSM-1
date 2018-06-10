@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
 
     <title>Endorphin - 登录</title>
 </head>
@@ -60,8 +60,8 @@
     </div>
 </div>
 
-<script src="../resources/bootstrap/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-<script src="../resources/bootstrap/popper.min.js" crossorigin="anonymous"></script>
-<script src="../resources/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="../static/bootstrap/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="../static/bootstrap/popper.min.js" crossorigin="anonymous"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>Excited</title>
-    <link rel="stylesheet" href="../resources/css/material-icons.css">
-    <link rel="stylesheet" href="../resources/css/material.min.css">
-    <script type="text/javascript" src="../resources/js/material.min.js"></script>
-    <script type="text/javascript" src="../resources/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/material-icons.css">
+    <link rel="stylesheet" href="../static/css/material.min.css">
+    <script type="text/javascript" src="../static/js/material.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.1.1.min.js"></script>
     <style>
         .center {
             margin-left: auto;
@@ -54,7 +54,7 @@
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col center">
                     <div align="center">
-                        <img src="../resources/img/home-first.png" align="center">
+                        <img src="../static/img/home-first.png" align="center">
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-card mdl-shadow--2dp center">
                         <div class="mdl-card__title mdl-card--expand">
-                            <img src="../resources/img/home-ill-build.png" width="100%"/>
+                            <img src="../static/img/home-ill-build.png" width="100%"/>
                         </div>
                         <div class="mdl-card__supporting-text mdl-typography--text-center">
                             <h5>自由</h5>
@@ -81,7 +81,7 @@
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-card mdl-shadow--2dp center">
                         <div class="mdl-card__title mdl-card--expand">
-                            <img src="../resources/img/home-ill-platform.png" width="100%"/>
+                            <img src="../static/img/home-ill-platform.png" width="100%"/>
                         </div>
                         <div class="mdl-card__supporting-text mdl-typography--text-center">
                             <h5>开放</h5>
@@ -91,7 +91,7 @@
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-card mdl-shadow--2dp center">
                         <div class="mdl-card__title mdl-card--expand">
-                            <img src="../resources/img/home-ill-work.png" width="100%"/>
+                            <img src="../static/img/home-ill-work.png" width="100%"/>
                         </div>
                         <div class="mdl-card__supporting-text mdl-typography--text-center">
                             <h5>共享</h5>

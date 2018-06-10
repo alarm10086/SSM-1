@@ -3,29 +3,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.endorphin.dao.UserDao">
-    <!--User结果集-->
-    <resultMap id="userMap" type="User">
-        <id property="userId" column="user_id"/>
-        <result property="userName" column="user_name"/>
-        <result property="password" column="password"/>
-        <result property="userPhone" column="user_phone"/>
-        <result property="userEmail" column="user_email"/>
-        <result property="userSex" column="user_sex"/>
-        <result property="createTime" column="create_time"/>
-        <result property="userType" column="user_type"/>
-        <result property="userState" column="user_state"/>
-        <result property="credit" column="credit"/>
-        <result property="lastLoginTime" column="last_login_time"/>
-        <result property="lastIp" column="last_ip"/>
-    </resultMap>
-
     <sql id="userColumns">
         user_id,user_name,user_phone,user_email,user_sex,create_time,user_type,user_state,
         credit,last_login_time,last_ip
     </sql>
 
     <!--根据用户名查找用户-->
-    <select id="findUserByUserName" parameterType="String" resultMap="userMap">
+    <select id="findUserByUserName" parameterType="String" resultMap="com.endorphin.domain.User">
         SELECT <include refid="userColumns"/>
         FROM user
         WHERE user_name = #{userName}
@@ -39,7 +23,7 @@
     </select>
 
     <!--获取所有用户信息-->
-    <select id="getAllUserInfo" resultMap="userMap">
+    <select id="getAllUserInfo" resultMap="com.endorphin.domain.User">
         SELECT <include refid="userColumns"/>
         FROM user
     </select>
@@ -52,7 +36,7 @@
     </select>
 
     <!--插入用户信息-->
-    <insert id="addUser" parameterType="User" keyProperty="userId" useGeneratedKeys="true">
+    <insert id="addUser" keyProperty="userId" useGeneratedKeys="true">
         INSERT INTO user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userName != null">
@@ -115,7 +99,7 @@
     </delete>
 
     <!--更新用户信息-->
-    <update id="updateUserByUserName" parameterType="User">
+    <update id="updateUserByUserName" parameterType="com.endorphin.domain.User">
         UPDATE user
         SET
         <if test="password != null and password != '' ">

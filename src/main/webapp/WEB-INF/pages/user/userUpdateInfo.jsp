@@ -3,11 +3,11 @@
 <html>
 <head>
     <title>修改个人信息</title>
-    <link rel="stylesheet" href="../../resources/css/material-icons.css">
-    <link rel="stylesheet" href="../../resources/css/material.min.css">
-    <link rel="stylesheet" href="../../resources/css/style.css">
-    <script type="text/javascript" src="../../resources/js/material.min.js"></script>
-    <script type="text/javascript" src="../../resources/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../../static/css/material-icons.css">
+    <link rel="stylesheet" href="../../static/css/material.min.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <script type="text/javascript" src="../../static/js/material.min.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <!-- Uses a header that scrolls with the text, rather than staying

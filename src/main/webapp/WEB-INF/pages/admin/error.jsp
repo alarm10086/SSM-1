@@ -2,10 +2,10 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" href="../../resources/css/material.min.css">
-    <link rel="stylesheet" href="../../resources/css/material-icons.css">
-    <script type="text/javascript" src="../../resources/js/material.min.js"></script>
-    <script type="text/javascript" src="../../resources/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../../static/css/material.min.css">
+    <link rel="stylesheet" href="../../static/css/material-icons.css">
+    <script type="text/javascript" src="../../static/js/material.min.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 ${Msg}

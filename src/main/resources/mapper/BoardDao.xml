@@ -3,45 +3,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.endorphin.dao.BoardDao">
-    <resultMap id="boardMap" type="Board">
-        <id property="boardId" column="board_id"/>
-        <result property="boardName" column="board_name"/>
-        <result property="boardDesc" column="board_desc"/>
-        <result property="boardPostNum" column="board_post_num"/>
-    </resultMap>
-
-    <resultMap id="boardAndPostMap" type="Board">
-        <id property="boardId" column="board_id"/>
-        <result property="boardName" column="board_name"/>
-        <result property="boardDesc" column="board_desc"/>
-        <result property="boardPostNum" column="board_post_num"/>
-        <collection property="posts" ofType="Post">
-            <id property="postId" column="post_id"/>
-            <result property="postBoardId" column="post_board_id"/>
-            <result property="postUserName" column="post_user_name"/>
-            <result property="postTitle" column="post_title"/>
-            <result property="postContent" column="post_content"/>
-            <result property="postGoodCount" column="post_good_count"/>
-            <result property="postBadCount" column="post_bad_count"/>
-            <result property="postViewCount" column="post_view_count"/>
-            <result property="postReplyCount" column="post_reply_count"/>
-            <result property="postStatus" column="post_status"/>
-            <result property="postCreateTime" column="post_create_time"/>
-            <result property="postUpdateTime" column="post_update_time"/>
-        </collection>
-    </resultMap>
-
     <sql id="boardColumns">
       board_id,board_name,board_desc,board_post_num
     </sql>
 
     <!--显示论坛所有板块-->
-    <select id="listAllBoard" resultMap="boardMap">
+    <select id="listAllBoard" resultMap="com.endorphin.domain.Board">
         SELECT <include refid="boardColumns"/> FROM board
     </select>
 
     <!--通过id查找板块-->
-    <select id="findBoardByBoardId" resultMap="boardMap">
+    <select id="findBoardByBoardId" resultMap="com.endorphin.domain.Board">
         SELECT
         <include refid="boardColumns"/>
         FROM board
@@ -49,7 +21,7 @@
     </select>
 
     <!--通过名称查找板块-->
-    <select id="findBoardByBoardName" resultMap="boardMap">
+    <select id="findBoardByBoardName" resultMap="com.endorphin.domain.Board">
         SELECT
         <include refid="boardColumns"/>
         FROM board
@@ -57,14 +29,14 @@
     </select>
 
     <!--显示板块中的帖子-->
-    <select id="listAllPostsOfBoard" resultMap="boardAndPostMap">
+    <select id="listAllPostsOfBoard" resultMap="com.endorphin.domain.Board">
         SELECT *
         FROM board B, post P
         WHERE B.board_id = P.post_board_id AND B.board_id = #{boardId}
     </select>
 
     <!--添加新板块-->
-    <insert id="addBoard" parameterType="Board" keyProperty="boardId" useGeneratedKeys="true">
+    <insert id="addBoard" keyProperty="boardId" useGeneratedKeys="true">
         INSERT INTO board
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="boardName != null">
@@ -91,7 +63,7 @@
     </insert>
 
     <!--更新板块数据-->
-    <update id="updateBoardByBoard" parameterType="Board">
+    <update id="updateBoardByBoard" parameterType="com.endorphin.domain.Board">
         UPDATE board
         SET
         <if test="boardName != null">
